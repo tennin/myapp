@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(params[:comment].permit!)
+    @comment = @post.comments.build(params[:comment].permit!)
     if @comment.save
      redirect_to post_path(params[:post_id]), notice: "Your comment was added."
 

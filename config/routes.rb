@@ -5,7 +5,7 @@ resources :posts, except: [:destroy] do
   resources :comments, only: [:create]
 end
 
-resources :categories, only: [:create, :new]
+resources :categories, only: [:create, :new, :show]
 
 
  #get 'posts', to: 'posts#index'

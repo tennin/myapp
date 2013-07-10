@@ -1,0 +1,13 @@
+
+<p class="lead">All Posts >> <%= @category.name %></p>
+<% @category.posts.each do |post| %>
+<div class="well">
+<h4><%= link_to post.title %></h4>
+<br/>
+ <p><%= post.description %></p>
+ <br/>
+<%= link_to "#{post.comments.count} comment", post_path(post.id) %>
+<br/>
+</div>
+
+<% end %>
